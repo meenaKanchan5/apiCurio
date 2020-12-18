@@ -1,0 +1,67 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Address",
+        "version": "1.0.0",
+        "description": "Address API"
+    },
+    "paths": {
+        "/address": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success:{\n    msg :\"added successfully\"\n}"
+                    }
+                },
+                "summary": "Get Address List"
+            },
+            "put": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Address"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "success:{\n    msg:updated  successfully\n}"
+                    }
+                }
+            },
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Address"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "success:{\n    msg:\"added successfully\"\n}"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Address": {
+                "description": "{\n   \"id\":'789',\n   \"address\":\"bhopal\",\n   \"city\":\"bhopal\",\n   \"pin\":67890,\n   \"state\":\"KA\"\n}",
+                "type": "object",
+                "properties": {
+                    "addressline": {
+                        "description": "\"address linme 1\""
+                    }
+                }
+            }
+        }
+    }
+}
